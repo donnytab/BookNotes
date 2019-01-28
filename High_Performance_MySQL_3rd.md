@@ -31,3 +31,41 @@ ACID （1）原子性 （2）一致性 （3）隔离性 （4）持久性
 InnoDB解决死锁方法：将持有最少行级排他锁的事务进行回滚
 
 事务日志：存储引擎只修改内存拷贝，再将修改行为记录到硬盘的事务日志中
+
+MySQL事务
+MySQL事务型存储引擎：InnoDB, NDB Cluster，（第三方）XtraDB, PBXT
+默认模式：AUTOCOMMIT
+隐式和显式锁定：innodb两段锁定协议
+	隐式：随时锁定，只有commit或rollback才同一时刻释放所有锁
+	显式：SELECT .. LOCK IN SHARE MODE
+
+多版本并发控制（MVCC）
+类似行级锁但避免了加锁操作，开销低
+通过保存数据在某个时间点的快照来实现，即每个事务看到的数据是一致的
+
+InnoDB
+事务型引擎，处理大量短期(short-lived)事务，多数正常提交很少回滚
+数据存储在表空间(spacetable)
+MVCC支持高并发
+基于聚簇索引
+热备份
+
+MyISAM
+整张表加锁，并发插入
+表修复 CHECK TABLE ...
+压缩表，压缩后不能修改，减少磁盘I/O
+不支持事务，不支持崩溃后的安全恢复
+
+
+[Chapter 2]
+
+基准测试
+sysbench, oltp和fileio测试
+
+
+[Chapter 3]
+
+服务器性能剖析
+服务器负载（查询日志），单条查询
+诊断间歇性问题
+
