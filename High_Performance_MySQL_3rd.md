@@ -69,3 +69,10 @@ sysbench, oltp和fileio测试
 服务器负载（查询日志），单条查询
 诊断间歇性问题
 
+
+[Chapter 4]
+ 数据类型
+ （1）整数类型：TINYINT(8), SMALLINT(16), MEDIUMINT(24), INT(32), BIGINT(64)
+ （2）字符串类型：VARCHAR(可变长度), CHAR, BLOB（二进制大数据） & TEXT（字符集大数据）
+ （3）日期和时间类型：DATETIME(YYYYMMDDHHMMSS), TIMESTAMP(UNIX)
+ （4）位数据类型：BIT
