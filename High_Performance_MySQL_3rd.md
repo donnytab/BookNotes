@@ -76,3 +76,21 @@ sysbench, oltp和fileio测试
  （2）字符串类型：VARCHAR(可变长度), CHAR, BLOB（二进制大数据） & TEXT（字符集大数据）
  （3）日期和时间类型：DATETIME(YYYYMMDDHHMMSS), TIMESTAMP(UNIX)
  （4）位数据类型：BIT
+
+ 范式化和反范式化
+
+ 缓存表
+
+ 加快ALTER TABLE操作
+ （1）只修改.frm
+ （2）快速创建MyISAM索引
+
+
+[Chapter 5]
+索引：快速定位表的位置
+
+索引类型
+（1）B-Tree索引
+（2）哈希索引
+（3）空间数据索引（R-Tree）
+（4）全文索引
